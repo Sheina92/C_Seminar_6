@@ -1,15 +1,16 @@
 ﻿// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 //0, 7, 8, -2, -2 -> 2
 //1, -7, 567, 89, 223-> 3
-System.Console.Write("Введите количество чисел: ");
-int value = int.Parse(System.Console.ReadLine());
-
+Console.Write("Введите числа через пробел: ");
+int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 int count = 0;
-
-for(int i = 0; i < value; i++)
+ 
+for (int i = 0; i < arr.Length; i++)
 {
-    System.Console.Write("Введите число: ");
-    if(int.Parse(System.Console.ReadLine()) > 0 ) count++;
+    if (arr[i] > 0)
+    {
+        count++;
+    }
 }
-
-System.Console.WriteLine("Чисел больше нуля: " + count);
+ 
+Console.WriteLine($"Количество элементов болеше 0 = {count}");
